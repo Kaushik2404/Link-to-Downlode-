@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/downlode_media"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+
+        />
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:id="@+id/downlode_link_edt"
+        android:background="@drawable/edt_back"
+        android:elevation="15dp"
+        android:hint="@string/downlode_link_enter"
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        />
+
+
+    <Button
+        android:id="@+id/downlode"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/downlode"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/btn_back"
+        android:elevation="15dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
