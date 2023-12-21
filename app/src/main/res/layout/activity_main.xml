@@ -47,7 +47,32 @@
         android:elevation="15dp"
         android:textColor="@color/white"
         android:textSize="18dp"
+        />
 
+<!--    <ProgressBar-->
+
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:id="@+id/progressBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:visibility="visible"-->
+<!--        style="?android:attr/progressBarStyleHorizontal" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/download_item"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        tools:text="Download Item" />-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/downlode_task_view"
+        android:layout_margin="10dp"
         />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
