@@ -1,6 +1,7 @@
 package com.example.multipledownlode
 
 import DownloadManager
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.os.Environment
@@ -27,12 +28,12 @@ class DownloadAdapter(private val context: Context):RecyclerView.Adapter<Downloa
        this.task.add(task)
         notifyItemInserted(this.task.size - 1)
     }
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.linkTv.text = task[position].uri.toString()
         holder.start.setOnClickListener {
+            holder.start.isClickable= false
 
             val downloadPath = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Demo").absolutePath
-//            val downloadPath = context.get(Environment.DIRECTORY_DOWNLOADS,"Demo")?.absolutePath
             val downloadDirectory = File(downloadPath)
             if (!downloadDirectory.exists()) {
                 downloadDirectory.mkdirs() // Create the directory and any missing parent directories if needed
@@ -49,9 +50,7 @@ class DownloadAdapter(private val context: Context):RecyclerView.Adapter<Downloa
                                     holder.linkTv.text = "download successful"
                                 }
                             }
-
                         }
-
                         override fun downloadStart() {
                             // Implement if needed
                         }

@@ -15,9 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
 
-    private var downloadManagers = mutableListOf<DoenlodeTask>()
     private lateinit var adapter: DownloadAdapter
-    private var persant: Int = 0
 
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
