@@ -1,6 +1,8 @@
 package com.example.multipledownlode
 
 data class DoenlodeTask(
-    var id:Double,
-    var uri:String
+    var downloadId: Int ? = null,
+    val url: String,
+    val path: String,
+    val fileName: String
 )

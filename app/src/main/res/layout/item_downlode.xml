@@ -39,8 +39,8 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="pause"
-        android:id="@+id/pause"
+        android:text="cancel"
+        android:id="@+id/cencel"
         />
 
 </LinearLayout>
