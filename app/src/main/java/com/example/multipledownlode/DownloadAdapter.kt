@@ -21,10 +21,24 @@ class DownloadAdapter(private val context: Context) : RecyclerView.Adapter<Downl
 
     var tasks = mutableListOf<DoenlodeTask>()
     fun addDownloadTask(task: DoenlodeTask) {
-       this.tasks.add(task)
-        notifyItemInserted(this.tasks.size - 1)
+        // Check for duplicate file names and update accordingly
+        var updatedFileName = task.fileName
+        var counter = 1
+        while (tasks.any { it.fileName == updatedFileName }) {
+            updatedFileName = "${task.fileNameWithoutExtension()} (${counter++}).${task.fileExtension()}"
+        }
+        task.fileName = updatedFileName
+        tasks.add(task)
+        notifyItemInserted(tasks.size - 1)
     }
 
+    private fun DoenlodeTask.fileNameWithoutExtension(): String {
+        return fileName.substringBeforeLast('.', fileName)
+    }
+
+    private fun DoenlodeTask.fileExtension(): String {
+        return fileName.substringAfterLast('.', "")
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_downlode, parent, false)
